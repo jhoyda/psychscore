@@ -6,7 +6,7 @@
 #' @param reverseNum Which items are reverse scored?
 #' @param maxScore What is the maximum score possible?
 #' @param minScore What is the minimum score possible?
-#' @keywords 
+#' @keywords reverse score subset
 #' @export
 #' @examples
 #' subsetReverse(myData, "BFI", reverseNum=c(1,3,5,7), maxScore=5, minScore=1)

@@ -2,7 +2,10 @@ Package: psychscore
 Title: Functions for Psychometric Testing
 Version: 0.0.1
 Authors@R: c( person("Joseph", "Hoyda", email = "joseph.hoyda@gmail.com", role = c("aut", "cre")))
-Description: A small toolbox to help streamline the process of reverse scoring psychological tests.  Includes an interactive function for quickly performing statistical analyses on a variety of subscales.  It is designed for researchers who need to document their analysis in a script file that can be easily shared. 
+Description: A small toolbox to help streamline the process of reverse scoring
+    psychological tests. Includes an interactive function for quickly performing
+    statistical analyses on a variety of subscales. It is designed for researchers
+    who need to document their analysis in a script file that can be easily shared.
 Depends:
     R (>= 3.2.1)
 Imports:
@@ -12,3 +15,4 @@ Imports:
 License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 5.0.1.9000
