@@ -1,7 +1,6 @@
 #' Interactive Reverse Scoring Function
 #'
 #' An interactive function for quickly performing statistical analyses on a variety of subscales.  It is designed for researchers who need to document their analysis in a script file that can be easily shared. 
-#' @param 
 #' @keywords score subscales 
 #' @export
 #' @examples

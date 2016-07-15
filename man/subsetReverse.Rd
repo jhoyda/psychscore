@@ -2,7 +2,7 @@
 % Please edit documentation in R/subsetReverse.R
 \name{subsetReverse}
 \alias{subsetReverse}
-\title{Subset Reverse Scored Data Frame}
+\title{Subset reverse scored data frame}
 \usage{
 subsetReverse(data = data, varPreface, reverseNum = c(), maxScore, minScore)
 }
@@ -18,7 +18,17 @@ subsetReverse(data = data, varPreface, reverseNum = c(), maxScore, minScore)
 \item{minScore}{What is the minimum score possible?}
 }
 \description{
-This function allows you to reverse score and subset data from a data frame.  It returns a data frame of items with a particular preface (e.g. BFI)
+This function allows you to reverse score and subset data from a data frame.  
+It returns a data frame of items with a particular preface (e.g. BFI).
+}
+\details{
+The \code{\link{subsetReverse}} function requires the target dataset to 
+to be formatted in a particular way.
+
+\itemize{
+  \item All items must be ordered from lowest to highest
+  \item Any column with the test preface must refer to a scored test item.  
+}
 }
 \examples{
 subsetReverse(myData, "BFI", reverseNum=c(1,3,5,7), maxScore=5, minScore=1)

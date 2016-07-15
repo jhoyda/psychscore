@@ -6,8 +6,9 @@
 #' @keywords histogram
 #' @export
 #' @examples
-#' histml(myData, "BFI")
-
+#' histml(myData)
+#' @section Author(s): 
+#' Raymond Mar
 
 histml <- function (x, y = "Sturges") {
      mnx <- mean (x)

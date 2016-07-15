@@ -1,6 +1,15 @@
-#' Subset Reverse Scored Data Frame 
+#' Subset reverse scored data frame 
 #'
-#' This function allows you to reverse score and subset data from a data frame.  It returns a data frame of items with a particular preface (e.g. BFI)
+#' This function allows you to reverse score and subset data from a data frame.  
+#' It returns a data frame of items with a particular preface (e.g. BFI).
+#'
+#' The \code{\link{subsetReverse}} function requires the target dataset to 
+#' to be formatted in a particular way.  
+#'
+#' \itemize{
+#'   \item All items must be ordered from lowest to highest
+#'   \item Any column with the test preface must refer to a scored test item.  
+#' }
 #' @param data What is the name of data set? Defaults to data.
 #' @param varPreface What is the variable preface of the scale? 
 #' @param reverseNum Which items are reverse scored?

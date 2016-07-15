@@ -14,8 +14,12 @@ histml(x, y = "Sturges")
 \description{
 Detailed histogram with mean, median and normal curve.
 }
+\section{Author(s)}{
+ 
+Raymond Mar
+}
 \examples{
-histml(myData, "BFI")
+histml(myData)
 }
 \keyword{histogram}
 
