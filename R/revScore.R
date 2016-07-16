@@ -28,7 +28,10 @@ revScore <- function()
                               sep="")
 
      # FUNCTION: Create Keys for subscales
-     subscaleNum <- readline(prompt="If there are subscales, please enter the number of subscales.  Otherwise press enter. ")
+     subscaleNum <- readline(prompt="How many subscales are there?  ")
+     if (is.na(subscaleNum)) {
+          subscaleNum = 0
+     }
      subKeyList <- list()
      keyListName <- paste(preface, "KeyList", sep="")
      keyString <- paste(keyListName, " <- list(", sep="")
@@ -78,11 +81,11 @@ revScore <- function()
      if (totalScaleScores=="T" || totalScaleScores=="t") {
           cat("## Descriptives on everything: \n")
           cat("describe(my.scales.", preface, "$scores) # describe everything", "\n", sep="")
-          cat("hist(my.scales.", preface, "$scores)", "\n \n", sep="")
+          cat("histml(my.scales.", preface, "$scores)", "\n \n", sep="")
           
           cat("## Cronbach's Alpha for all scales: \n")
-          cat("my.scales.", preface, "$alpha \n \n", sep="")
-          cat("alpha(", subsetReverseName, ") \n", sep="")
+          cat("my.scales.", preface, "$alpha \n", sep="")
+          cat("alpha(", subsetReverseName, ") \n \n", sep="")
      }
 
      for (i in 1:subscaleNum) {
@@ -91,7 +94,7 @@ revScore <- function()
           } 
           cat("## Describe: ", names(subKeyList)[i], "\n", sep="")
           cat("describe(my.scales.", preface, "$scores[,", toString(i), "]) \n", sep="")      
-          cat("hist(my.scales.", preface, "$scores[,", toString(i), "]) \n", sep="")
+          cat("histml(my.scales.", preface, "$scores[,", toString(i), "]) \n", sep="")
           cat("## Check Cronbach's Alpha ", names(subKeyList[i]), "\n", sep="")
           cat("my.scales.", preface, "$alpha[,", toString(i), "] \n", sep="")
           cat("alpha(", subsetReverseName, "[,as.numeric(unlist(", keyListName, "[", i, "]))]) \n", sep="")
@@ -99,8 +102,12 @@ revScore <- function()
           cat(subsetReverseName, "$", preface, "_", names(subKeyList[i]), " <- rowMeans(",
               subsetReverseName, "[,c(", toString(subKeyList[[i]]), ")]) \n \n", sep="")
      }
-     cat("## Additional descriptive information \n")
-     cat("my.scales.", preface, "\n \n", sep="")
+
+     if (totalScaleScores=="T" || totalScaleScores=="t") {
+          cat("## Additional descriptive information \n")
+          cat("my.scales.", preface, "\n \n", sep="")
+     }
+
      cat("# Bind new data frame to master dataset \n")
      cat(dataSetName, " <- cbind(", dataSetName, ", ", subsetReverseName, ")", "\n \n", sep="")
 }    
