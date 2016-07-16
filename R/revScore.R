@@ -5,6 +5,8 @@
 #' @export
 #' @examples
 #' revScore()
+#' @section Author(s): 
+#' Joseph Hoyda
 
 revScore <- function()
 {

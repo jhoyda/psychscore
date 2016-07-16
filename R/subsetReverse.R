@@ -19,7 +19,8 @@
 #' @export
 #' @examples
 #' subsetReverse(myData, "BFI", reverseNum=c(1,3,5,7), maxScore=5, minScore=1)
-
+#' @section Author(s): 
+#' Joseph Hoyda
 
 
 subsetReverse <- function(data = data, varPreface, reverseNum = c(), maxScore, minScore) {
