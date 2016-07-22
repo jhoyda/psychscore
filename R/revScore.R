@@ -11,10 +11,10 @@
 revScore <- function()
 {
      # Ask some questions
-     dataSetName <- readline(prompt="Welcome to the reverse scoring function. What is the name of your dataset? ")
+     dataSetName <- readline(prompt="What is the name of your dataset? ")
      preface <- readline(prompt="What is the variable preface for this scale? (e.g., BFI, BFAS): ")
      num <- readline(prompt="How many items are there?  (e.g., 44): ")
-     reverse <- readline(prompt="Which items are reverse-coded?  Please separate each item with a comma. (e.g., 2, 7, 3, etc.): ")
+     reverse <- readline(prompt="Which items are reverse-coded?  (e.g., 2, 7, 3, etc.): ")
      minScore <- readline(prompt="What is the minimum score in this test? ")
      maxScore <- readline(prompt="What is the maximum score in this test? ")
      totalScaleScores <- readline(prompt="Do you want total scale scores?  If so, please type T, otherwise type F: ")
