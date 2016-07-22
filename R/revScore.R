@@ -57,7 +57,13 @@ revScore <- function()
           }
      }
      if (totalScaleScores == "T" | totalScaleScores == "t") {
-          keyString <- paste(keyString, ", all=c(1:", num, ")", sep="")
+          if (subscaleNum == 0) {
+               keyString <- paste(keyString, "all=c(1:", num, ")", sep="")
+          }
+          if (subscaleNum != 0) {
+               keyString <- paste(keyString, ", all=c(1:", num, ")", sep="")
+          }
+
      }
      
      keyString <- paste(keyString, ")", sep="")
@@ -70,6 +76,9 @@ revScore <- function()
      # CODE: Create key list
      cat("# Create key list \n")
      cat(keyString, "\n")
+
+
+
      cat("# Create Keys", "\n")
      cat(keyName, " <- ", "make.keys(nvars = ", toString(num), ", ",
          keyListName, ")", "\n", sep="")
