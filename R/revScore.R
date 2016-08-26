@@ -26,7 +26,8 @@ revScore <- function()
                               "\"", preface, "\", ", 
                               "reverseNum= c(", toString(reverse), "),", 
                               "maxScore=", toString(maxScore), ", ",
-                              "minScore=", toString(minScore), ")",
+                              "minScore=", toString(minScore), ", ",
+                              "items=", as.numeric(num), ")",
                               sep="")
 
      # FUNCTION: Create Keys for subscales

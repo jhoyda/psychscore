@@ -9,6 +9,10 @@ revScore()
 \description{
 An interactive function for quickly performing statistical analyses on a variety of subscales.  It is designed for researchers who need to document their analysis in a script file that can be easily shared.
 }
+\section{Author(s)}{
+ 
+Joseph Hoyda
+}
 \examples{
 revScore()
 }

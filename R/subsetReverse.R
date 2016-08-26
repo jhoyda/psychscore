@@ -15,6 +15,7 @@
 #' @param reverseNum Which items are reverse scored?
 #' @param maxScore What is the maximum score possible?
 #' @param minScore What is the minimum score possible?
+#' @param items The number of items in the test
 #' @keywords reverse score subset
 #' @export
 #' @examples
@@ -23,10 +24,20 @@
 #' Joseph Hoyda
 
 
-subsetReverse <- function(data = data, varPreface, reverseNum = c(), maxScore, minScore) {
+subsetReverse <- function(data = data, varPreface, reverseNum = c(), maxScore, minScore, items) {
+
      newDFname <- paste("Reverse", varPreface, sep="")
+     colnumbers <- c()
+     numcol <- ncol(data)
      # Subset New Data Frame using only prefix scores.  Add "REVERSE" prefix to every col name.
-     NewDF <- data[, grepl(varPreface, names(data))]
+     for (i in c(1:ncol(data))) {
+          for (j in c(1:items)) {
+               if (colnames(data)[i] == paste(varPreface, j, sep="")) {
+                    colnumbers <- append(colnumbers, i)
+               }
+          }
+     }
+     NewDF <- data[, colnumbers]
      colnames(NewDF) <- paste("REVERSE", colnames(NewDF), sep="_")
      
      # Reverse score items  

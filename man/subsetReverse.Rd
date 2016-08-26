@@ -4,7 +4,8 @@
 \alias{subsetReverse}
 \title{Subset reverse scored data frame}
 \usage{
-subsetReverse(data = data, varPreface, reverseNum = c(), maxScore, minScore)
+subsetReverse(data = data, varPreface, reverseNum = c(), maxScore, minScore,
+  items)
 }
 \arguments{
 \item{data}{What is the name of data set? Defaults to data.}
@@ -16,6 +17,8 @@ subsetReverse(data = data, varPreface, reverseNum = c(), maxScore, minScore)
 \item{maxScore}{What is the maximum score possible?}
 
 \item{minScore}{What is the minimum score possible?}
+
+\item{items}{The number of items in the test}
 }
 \description{
 This function allows you to reverse score and subset data from a data frame.  
@@ -29,6 +32,10 @@ to be formatted in a particular way.
   \item All items must be ordered from lowest to highest
   \item Any column with the test preface must refer to a scored test item.  
 }
+}
+\section{Author(s)}{
+ 
+Joseph Hoyda
 }
 \examples{
 subsetReverse(myData, "BFI", reverseNum=c(1,3,5,7), maxScore=5, minScore=1)
